@@ -1,33 +1,65 @@
+body {
+  background-color: #343a40;
+}
 .App {
   text-align: center;
+  margin-top: 30px;
+  color: #fff;
+}
+.red {
+  background-color: red;
+  border-radius: 10px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form .top_options {
   display: flex;
-  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.top_options .form-group {
+  padding: 7px 0;
+  margin-right: 15px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.top_options .form-group,
+.top_options .form-group label {
+  margin-bottom: 0;
+}
+.elem {
+  width: 200px;
+}
+.elem.city {
+  position: relative;
+}
+.elem.city ul {
+  position: absolute;
+  left: 2px;
+  top: 100%;
+  padding: 0;
+  width: 100%;
+  /* background-color: #fff; */
+}
+.elem.city ul li {
+  list-style: none;
+  color: #000;
+  text-align: left;
+  font-size: 13px;
+  padding: 4px 0 4px 5px;
+  cursor: pointer;
+  background-color: #fff;
+  /* transition: all 0.2s ease; */
+}
+.elem.city ul li:hover {
+  background-color: rgb(236, 236, 236);
+}
+.elem.city ul li:active {
+  background-color: #007bff;
+  color: #fff;
+}
+.elem.city ul li:not(:first-child) {
+  border-top: 1px solid #ccc;
+}
+.elem.city input {
+  height: calc(1.5em + 0.75rem);
+  font-size: 13px;
+  font-weight: bold;
 }
