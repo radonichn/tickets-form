@@ -56,7 +56,7 @@
 
 /* Style the indicator (dot/circle) */
 .radio_container .radio:after {
-  top: 3.5px;
+  top: 3px;
   left: 3px;
   width: 7px;
   height: 7px;

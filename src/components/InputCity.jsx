@@ -39,13 +39,13 @@ class InputCity extends Component {
   };
   render() {
     return (
-      <div className="form-group elem city">
+      <div className="form-group elem city mr-2 mb-0">
         <input
           type="text"
-          className="form-control"
+          className="form-control rounded-0 border-0"
           value={this.state.text}
           onChange={this.handleChange}
-          placeholder="Flight to"
+          placeholder={this.props.placeHolder}
         />
         {this.state.suggestions.length > 0 && (
           <ul>

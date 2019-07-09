@@ -4,11 +4,11 @@ import { Provider } from "react-redux";
 import InputRadio from "./InputRadio/InputRadio";
 import InputCheckbox from "./InputCheckbox/InputCheckbox";
 import InputCity from "./InputCity";
-
+import InputCalendar from './InputCalendar/InputCalendar';
 import reducer from "./reducers/reducer";
 const store = createStore(reducer);
 store.subscribe(() => {
-  console.log(store.getState());
+  // console.log(store.getState());
 });
 
 class SearchForm extends Component {
@@ -22,6 +22,8 @@ class SearchForm extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
+    const finalObj = Object.values(store.getState()).reduce(((r,c) => Object.assign(r,c)), {});
+    console.log('---------\n', finalObj,'\n------------');
   };
 
   render() {
@@ -35,7 +37,7 @@ class SearchForm extends Component {
               handleChecked={this.handleRadio}
               handleParam={true}
               name="way"
-              travelType="two way"
+              travelType="two_way"
             />
             <InputRadio
               label="One Way"
@@ -43,7 +45,7 @@ class SearchForm extends Component {
               handleChecked={this.handleRadio}
               handleParam={false}
               name="way"
-              travelType="one way"
+              travelType="one_way"
             />
             <InputCheckbox
               label="Direct flights only"
@@ -52,15 +54,17 @@ class SearchForm extends Component {
               stateStorage={store}
             />
           </div>
-          <div className="container d-flex">
-            <InputCity flights={this.state.flights} direction="FROM_CITY" />
-            <InputCity flights={this.state.flights} direction="TO_CITY" />
-          </div>
+          <div className="container d-flex pb-2">
+            <InputCity flights={this.state.flights} direction="FROM_CITY" placeHolder="Flight from"/>
+            <InputCity flights={this.state.flights} direction="TO_CITY" placeHolder="Flight to" />
+            <InputCalendar/>
+
           <input
             type="submit"
             value="SEARCH"
             className="btn btn-sm btn-primary"
           />
+          </div>
         </form>
       </Provider>
     );
