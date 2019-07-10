@@ -63,3 +63,24 @@ body {
   font-size: 13px;
   font-weight: bold;
 }
+
+.fake-select {
+  display: block;
+  width: 150px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  cursor: pointer;
+  text-align: left;
+  padding-left: 10px;
+  color: #8e9296;
+  margin-right: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.fake-select.disabled {
+  cursor: default;
+  background-color: rgba(187, 187, 187);
+}

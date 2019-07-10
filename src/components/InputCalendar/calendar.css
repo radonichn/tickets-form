@@ -1,15 +1,44 @@
-.fake-select{
-    display: block;
-    width: 150px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    cursor: pointer;
-    text-align:left;
-    padding-left: 10px;
-    color: #8e9296;
-    margin-right: 5px;
-    font-size: 14px;
-    font-weight: bold;
+.calendar {
+  /* width: 300px; */
+  position: relative;
+}
+
+.calendar table {
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  width: 300px;
+  background-color: #fff;
+}
+
+.table-nav,
+td.day {
+  cursor: pointer;
+}
+td.day.disabled {
+  cursor: default;
+  background-color: rgba(230, 230, 230);
+}
+td.day.selected {
+  background-color: rgb(238, 179, 15);
+}
+td.day.disabled:hover {
+  background-color: rgba(230, 230, 230);
+}
+th.table-nav:hover {
+  background-color: #434a52;
+}
+table.table td,
+table.table th {
+  padding: 4px 2px;
+}
+table.table td,
+table.table th.week-day {
+  padding: 4px 2px;
+  width: 42.4px;
+  min-width: 42.4px;
+  max-width: 42.4px;
+}
+td.day:hover {
+  background-color: rgba(7, 197, 255, 0.836);
 }

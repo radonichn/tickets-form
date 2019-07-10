@@ -2,12 +2,13 @@ import React, { Component } from "react";
 import "./radio.css";
 import { connect } from "react-redux";
 class InputRadio extends Component {
-  state = {};
   handleChecked = () => {
     this.props.dispatch({
       type: "HANDLE_RADIO",
       payload: this.props.travelType
     });
+    if (this.props.travelType === "one_way")
+      this.props.dispatch({ type: "DATE_BACK_RESET" });
   };
   render() {
     const { label, isDefaultChecked, name } = this.props;

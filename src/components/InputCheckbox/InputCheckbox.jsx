@@ -22,5 +22,4 @@ class InputCheckbox extends Component {
     );
   }
 }
-const mapStateToProps = state => ({});
-export default connect(mapStateToProps)(InputCheckbox);
+export default connect(state => ({}))(InputCheckbox);
